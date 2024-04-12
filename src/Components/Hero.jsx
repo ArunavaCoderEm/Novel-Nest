@@ -1,5 +1,4 @@
 import React from 'react'
-import bg from '../../public/bg.jpg'
 
 export default function Hero() {
   return (
