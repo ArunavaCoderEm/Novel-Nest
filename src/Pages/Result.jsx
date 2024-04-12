@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import {Link, useParams} from 'react-router-dom'
+import BounceLoader from "react-spinners/BounceLoader";
 
 export default function Result() {
 
     const [obj,setobj] = useState([])
 
     let params = useParams()
-    // https://openlibrary.org/books/
+
+    let [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+    },[])
+
     const getdetails = async () => {
         const data = await fetch(`https://openlibrary.org/search.json?q=${params.name}&limit=1`)
         const res = await data.json()
@@ -23,7 +33,15 @@ export default function Result() {
     <>
 
     <h1 className='text-black text-center text-3xl font-normal my-5'>... Your Book Details ...</h1>
-
+    {
+            loading ? 
+             <BounceLoader 
+              color={'#ffbf00'}
+              loading={loading}
+              size={50}
+              className='text-center items-center justify-center m-auto'
+            /> : 
+            <>
         {obj.map((book) => {
             return(
         <div key={book.cover_i}>
@@ -37,7 +55,7 @@ export default function Result() {
                         <p className="flex-grow text-amber-700 border-b-2 border-amber-700 py-2 text-lg px-1">Description</p>
         
                         </div>
-                        <p className="leading-relaxed mb-4">Fam locavore kickstarter distillery. Mixtape chillwave tumeric sriracha taximy chia microdosing tilde DIY. XOXO fam inxigo juiceramps cornhole raw denim forage brooklyn. Everyday carry +1 seitan poutine tumeric. Gastropub blue bottle austin listicle pour-over, neutra jean.</p>
+                        <p className="leading-relaxed mb-4"><span className='text-lg font-semibold text-amber-600 mr-2'>First Sentence :</span> {(book.first_sentence)?book.first_sentence[0]:"Not Available" }</p>
                         <div className="flex border-t border-gray-200 py-2">
                         <span className="text-gray-500">People online read counr</span>
                         <span className="ml-auto text-gray-900">{book.already_read_count}</span>
@@ -64,21 +82,22 @@ export default function Result() {
                         <div className="flex border-t border-b mb-6 border-gray-200 py-2">
                         <span className="text-gray-500">Avl in {book.language.length}  Languages</span>
                         <div className="grid grid-cols-4  ml-auto">
-                        <span className="ml-auto mx-2 text-gray-900">{book.language[0]}</span>
-                        <span className="ml-auto mx-2 text-gray-900">{book.language[1]}</span>
-                        <span className="ml-auto mx-2 text-gray-900">{book.language[2]}</span>
-                        <span className="ml-auto mx-2 text-gray-900">{book.language[3]}</span>
-                        <span className="ml-auto mx-2 text-gray-900">.....</span>
+                        <span className="ml-auto  text-gray-900">{book.language[0]}</span>
+                        <span className="ml-auto  text-gray-900">{book.language[1]}</span>
+                        <span className="ml-auto mx-auto  text-gray-900">{book.language[2]}</span>
+                        <span className="ml-auto mx-auto text-gray-900">{book.language[3]} ....</span>
                         </div>
                         </div>
                         </div>
-                    <img alt="ecommerce" className="tryt lg:w-1/2 w-full lg:h-[500px] h-64 lg:mt-28 md:mt-10 sm:,t-2 object-cover object-center rounded" src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}/>
+                    <img alt="bookpic" className="tryt lg:w-1/2 w-full lg:h-auto h-72 lg:mt-20 md:mt-10 sm:,t-2 object-cover object-center rounded" src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}/>
                     </div>
                 </div>
                 </section>
                 </div>
             )
         })}
+        </>
+    }
     </>
     
   )

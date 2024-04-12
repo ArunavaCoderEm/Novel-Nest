@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 export default function Category() {
   return (
     <>
+    <section id='explore'>
         <h1 className='text-3xl font-bold text-amber-700 text-center my-5'>Trending Categories</h1>
         <div className="grid grid-cols-3 mt-10 mb-10 ">
             <Link to='/category/action' className="sq m-auto tryy p-2 rounded-lg my-2">
@@ -55,6 +56,7 @@ export default function Category() {
                 </div>
             </Link>
         </div>
+        </section>
     </>
   )
 }

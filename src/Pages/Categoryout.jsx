@@ -46,7 +46,7 @@ export default function Categoryout() {
             {obj.map(books => {
                 return(
                 <div key={books.cover_id} className='m-auto'> 
-                    <Bookcard title={books.title} coverb={books.cover_id} author={books.authors[0].name} publish={books.first_publish_year} sub={books.subject[3]} res={books.title} />
+                    <Bookcard title={books.title} coverb={books.cover_id} author={books.authors[0].name} publish={books.first_publish_year} sub={books.subject[3]} res={books.cover_edition_key} />
                 </div>
             )})}
         </div>
