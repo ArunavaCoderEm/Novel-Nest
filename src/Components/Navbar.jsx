@@ -20,7 +20,7 @@ export default function Navbar() {
       <nav className="bg-white border-gray-200 dark:bg-gray-700">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="./blogobb.png" className="h-8" alt="Flowbite Logo" />
+            <img src="./blogobb.png" className="h-8"/>
             <span className="self-center text-xl font-mono font-semibold whitespace-nowrap dark:text-white"><span className='text-amber-400 font-serif font-bold'>N</span>ovel<span className='text-amber-400 font-serif font-bold'>N</span>est</span>
           </Link>
           <div className="flex md:order-2">
