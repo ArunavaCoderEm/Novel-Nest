@@ -8,3 +8,11 @@ html {
     width: 50%;
     border-radius: 20px;
 }
+
+.hov {
+    transition: 0.3s;
+}
+
+.hov:hover {
+    text-shadow: 0 0 20px rgb(146, 146, 2);
+}
