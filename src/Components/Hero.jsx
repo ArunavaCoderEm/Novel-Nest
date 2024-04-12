@@ -3,7 +3,9 @@ import React, {useState, useEffect} from 'react'
 export default function Hero() {
   const [obj,setobj] = useState([])
 
-  const today = "action"
+  const choose = ['scifi','love','action','addventure','romace','detective'] 
+  let random = Math.floor(Math.random() * choose.length);
+  const today = choose[random]
 
   const getlikebooks = async () => {
       const data = await fetch(`https://openlibrary.org/subjects/${today}.json?limit=1`)
@@ -32,7 +34,7 @@ export default function Hero() {
         {obj.map(books => {
           return (
         <div className="lg:max-w-lg lg:w-full  md:w-1/2 w-5/6" key={books.cover_id}>
-          <img className="object-cover object-center lg:ml-32 rounded" alt="hero" src={`https://covers.openlibrary.org/b/id/${books.cover_id}-L.jpg`}/>
+          <img className="object-cover rounded-lg object-center lg:ml-32 rounded" alt="hero" src={`https://covers.openlibrary.org/b/id/${books.cover_id}-L.jpg`}/>
         </div>
         )})}
       </div>

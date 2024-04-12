@@ -5,7 +5,9 @@ export default function Belowhome() {
 
     const [obj,setobj] = useState([])
 
-    const today = "love"
+    const choose = ['scifi','love','action','addventure','romace','detective'] 
+    let random = Math.floor(Math.random() * choose.length);
+    const today = choose[random]
 
     const getlikebooks = async () => {
         const data = await fetch(`https://openlibrary.org/subjects/${today}.json?limit=6`)
@@ -25,7 +27,7 @@ export default function Belowhome() {
       {obj.map(books => {
         return(
           <div key={books.cover_id}> 
-            <Bookcard title={books.title} coverb={books.cover_id} author={books.authors[0].name} publish={books.first_publish_year} sub={books.subject[30]} />
+            <Bookcard title={books.title} coverb={books.cover_id} author={books.authors[0].name} publish={books.first_publish_year} sub={books.subject[3]} />
           </div>
           )})}
     </div>
