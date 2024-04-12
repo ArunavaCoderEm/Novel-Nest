@@ -30,12 +30,12 @@ export default function Category() {
                     Comedy
                 </div>
             </Link>
-            <Link to='/category/scifi' className="sq m-auto tryy p-2 rounded-lg my-2">
+            <Link to='/category/romance' className="sq m-auto tryy p-2 rounded-lg my-2">
                 <div className="pics  w-[100px] h-[70px]">
-                    <img src="https://media.istockphoto.com/id/1277822133/photo/futuristic-scifi-battle-ships-hover-over-an-alien-planet.jpg?s=612x612&w=0&k=20&c=JSZtYp2TtvE19LWxOV1mhgfpvZX6Y-jxlC-KRwYi6cs=" className='rounded-lg' alt="" />
+                    <img src="https://i.pinimg.com/originals/a5/8f/c6/a58fc6a3644ed93cf14d4ea07e75a2fe.jpg" className='rounded-lg h-[50px]' alt="" />
                 </div>
                 <div className="sqt text-center mb-3 text-semibold font-mono tracking-wider">
-                    Sci Fi
+                    Romance
                 </div>
             </Link>
             <Link to='/category/detective' className="sq m-auto tryy p-2 rounded-lg my-2">

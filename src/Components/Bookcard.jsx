@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 export default function Bookcard(props) {
   return (
     <>
-    <div className="max-w-sm my-2 bg-white border mx-5 try border-gray-200 rounded-lg shadow dark:bg-amber-800 dark:border-amber-700">
+    <div className="min-w-sm max-w-lg w-[350px] my-2 bg-white border mx-5 try border-gray-200 rounded-lg shadow dark:bg-amber-800 dark:border-amber-700">
         <a href="#">
             <img className="rounded-t-lg m-auto ibmg" src={`https://covers.openlibrary.org/b/id/${props.coverb}-L.jpg`} alt="book pic" />
         </a>

@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react'
 export default function Hero() {
   const [obj,setobj] = useState([])
 
-  const choose = ['scifi','love','action','addventure','romace','detective'] 
+  const choose = ['comedy','love','action','adventure','romance','detective'] 
   let random = Math.floor(Math.random() * choose.length);
   const today = choose[random]
 
@@ -34,7 +34,8 @@ export default function Hero() {
         {obj.map(books => {
           return (
         <div className="lg:max-w-lg lg:w-full  md:w-1/2 w-5/6" key={books.cover_id}>
-          <img className="object-cover rounded-lg object-center lg:ml-32 rounded" alt="hero" src={`https://covers.openlibrary.org/b/id/${books.cover_id}-L.jpg`}/>
+          <img className="object-cover rounded-lg object-center lg:ml-32" alt="hero" src={`https://covers.openlibrary.org/b/id/${books.cover_id}-L.jpg`}/>
+          <h3 className='text-lg text-black ml-5 my-2 font-semibold text-center'>{books.title}</h3>
         </div>
         )})}
       </div>

@@ -5,7 +5,7 @@ export default function Belowhome() {
 
     const [obj,setobj] = useState([])
 
-    const choose = ['scifi','love','action','addventure','romace','detective'] 
+    const choose = ['comedy','love','action','adventure','romance','detective']  
     let random = Math.floor(Math.random() * choose.length);
     const today = choose[random]
 
