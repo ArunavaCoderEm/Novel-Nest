@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   const [obj,setobj] = useState([])
@@ -27,8 +28,13 @@ export default function Hero() {
           </h1>
           <p className="mb-8  leading-relaxed text-gray-700 bg-slate-200 p-4 rounded-md">Books are windows to countless worlds, offering both escape and insight. Within their pages, readers discover adventure, knowledge, and inspiration. They are timeless companions, guiding us through the depths of imagination and understanding.</p>
           <div className="flex justify-center">
-            <button className="inline-flex text-black bg-amber-500 border-0 py-2 px-6 focus:outline-none hover:bg-amber-600 rounded text-lg">Explore More</button>
-            <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-amber-500 rounded text-lg">Read This</button>
+            <Link className="inline-flex text-black bg-amber-500 border-0 py-2 px-6 focus:outline-none hover:bg-amber-600 rounded text-lg">Explore More</Link>
+            {obj.map(books => {
+          return (
+            <div key={books.cover_id}>
+            <Link to={`/result/${books.title}`} className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-amber-500 rounded text-lg">Read This</Link>
+            </div>
+          )})}
           </div>
         </div>
         {obj.map(books => {

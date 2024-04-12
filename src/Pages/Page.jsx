@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import About from './About'
 import Features from './Features'
 import Categoryout from './Categoryout'
+import Result from './Result'
 
 export default function Page() {
   return (
@@ -16,6 +17,7 @@ export default function Page() {
       <Route path='/about' element={<About/>}/>
       <Route path='/features' element={<Features/>}/>
       <Route path='/category/:id' element={<Categoryout/>}/>
+      <Route path='/result/:name' element={<Result/>}/>
     </Routes>
     <Footer/>
     </>
