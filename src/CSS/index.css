@@ -13,6 +13,21 @@
     box-shadow: 0 0 20px black;
 }
 
+.tryy {
+    box-shadow: 0 0 10px black;
+    transition: 0.3s;
+}
+
+.tryy:hover {
+    box-shadow: 0 0 30px rgb(155, 112, 2);
+}
+
+@media only screen and (max-width: 680px) {
+    .grid-item {
+        grid-column : 1 / span 3
+    }
+}
+
 .ibmg {
     height: 200px;
     width: auto;
