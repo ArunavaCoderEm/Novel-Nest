@@ -5,13 +5,13 @@ export default function Bookcard(props) {
   return (
     <>
     <div className="min-w-sm max-w-lg w-[350px] my-2 bg-white border mx-5 try border-gray-200 rounded-lg shadow dark:bg-amber-800 dark:border-amber-700">
-        <a href="#">
+        <p href="#">
             <img className="rounded-t-lg m-auto ibmg" src={`https://covers.openlibrary.org/b/id/${props.coverb}-L.jpg`} alt="book pic" />
-        </a>
+        </p>
         <div className="p-5">
-            <a href="#">
+            <p href="#">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{props.title}</h5>
-            </a>
+            </p>
             <p className="mb-3 font-normal text-gray-100 ">Author : {props.author}</p>
             <div className="grid grid-cols-2">
             <p className="mb-3 font-normal text-gray-200 ">Published : {props.publish}</p>
