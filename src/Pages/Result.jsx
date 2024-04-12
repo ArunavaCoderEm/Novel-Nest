@@ -57,7 +57,7 @@ export default function Result() {
                         </div>
                         <p className="leading-relaxed mb-4"><span className='text-lg font-semibold text-amber-600 mr-2'>First Sentence :</span> {(book.first_sentence)?book.first_sentence[0]:"Not Available" }</p>
                         <div className="flex border-t border-gray-200 py-2">
-                        <span className="text-gray-500">People online read counr</span>
+                        <span className="text-gray-500">People online read count</span>
                         <span className="ml-auto text-gray-900">{book.already_read_count}</span>
                         </div>
                         <div className="flex border-t border-gray-200 py-2">
