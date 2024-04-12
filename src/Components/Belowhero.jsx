@@ -20,12 +20,12 @@ export default function Belowhome() {
 
   return (
     <>
-    <h1 className='text-black font-thin text-3xl text-center m-auto my-5'>... You may like these ...</h1>
+    <h1 className='text-black tsh font-thin text-3xl text-center m-auto my-5'>... You may like these ...</h1>
     <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
       {obj.map(books => {
         return(
           <div key={books.cover_id}> 
-            <Bookcard title={books.title} coverb={books.cover_id}/>
+            <Bookcard title={books.title} coverb={books.cover_id} author={books.authors[0].name} publish={books.first_publish_year} sub={books.subject[30]} />
           </div>
           )})}
     </div>

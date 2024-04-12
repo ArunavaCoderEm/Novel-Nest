@@ -23,3 +23,7 @@
 .ty {
     text-shadow: 0 0 10px black;
 }
+
+.tsh {
+    text-shadow: 0 0 10px rgb(87, 87, 0);
+}
