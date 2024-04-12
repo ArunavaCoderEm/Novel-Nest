@@ -86,6 +86,11 @@ To use the Openlibrary API, you'll need a free API link. Obtain one from Openlib
 1. Click on "Get Details that will land you in a new page showing several details about that book.
 
 ## Images
+![Screenshot 2024-04-12 235455](https://github.com/ArunavaCoderEm/Novel_Nest/assets/121813676/7fb0e6ef-2d1d-48e0-80cb-f7241aa3be51)
+![Screenshot 2024-04-12 235425](https://github.com/ArunavaCoderEm/Novel_Nest/assets/121813676/3d669262-f363-456e-9328-60c049332d2e)
+![Screenshot 2024-04-12 235059](https://github.com/ArunavaCoderEm/Novel_Nest/assets/121813676/9e8eaa4d-9f2f-4d32-82ae-fb7be8ab8088)
+![Screenshot 2024-04-12 235038](https://github.com/ArunavaCoderEm/Novel_Nest/assets/121813676/303bd692-7876-4c36-8497-dfe2a5c1f7a9)
+![Screenshot 2024-04-12 235025](https://github.com/ArunavaCoderEm/Novel_Nest/assets/121813676/e0e9c58d-1882-4a17-9732-6aea7bc5d1e7)
 
 
 
