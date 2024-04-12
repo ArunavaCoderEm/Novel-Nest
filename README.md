@@ -5,7 +5,7 @@
 - [Project Setup](#project-setup)
 - [Development Server](#development-server)
 - [Building for Production](#building-for-production)
-- [Using FoodiFy](#using-foodify)
+- [Using NovelNest](#using-novelnest)
 - [Contributing](#contributing)
 - [License](#license)
 
