@@ -1,0 +1,34 @@
+import React, { useEffect, useState } from 'react'
+import Bookcard from './Bookcard'
+
+export default function Belowhome() {
+
+    const [obj,setobj] = useState([])
+
+    const today = "love"
+
+    const getlikebooks = async () => {
+        const data = await fetch(`https://openlibrary.org/subjects/${today}.json?limit=6`)
+        const res = await data.json()
+        console.log(res);
+        setobj(res.works)
+    }
+
+    useEffect(() => {
+        getlikebooks();
+    },[])
+
+  return (
+    <>
+    <h1 className='text-black font-thin text-3xl text-center m-auto my-5'>... You may like these ...</h1>
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+      {obj.map(books => {
+        return(
+          <div key={books.cover_id}> 
+            <Bookcard title={books.title} coverb={books.cover_id}/>
+          </div>
+          )})}
+    </div>
+    </>
+  )
+}

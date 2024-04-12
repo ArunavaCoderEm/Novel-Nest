@@ -8,3 +8,18 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.try {
+    box-shadow: 0 0 20px black;
+}
+
+.ibmg {
+    height: 200px;
+    width: auto;
+    margin-top: 20px;
+    box-shadow: 0 0 15px yellow;
+}
+
+.ty {
+    text-shadow: 0 0 10px black;
+}
