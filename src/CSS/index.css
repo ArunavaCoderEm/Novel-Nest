@@ -13,6 +13,10 @@
     box-shadow: 0 0 20px black;
 }
 
+.tryt {
+    box-shadow: 0 0 20px rgb(138, 111, 1);
+}
+
 .tryy {
     box-shadow: 0 0 10px black;
     transition: 0.3s;

@@ -1,7 +1,9 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import {Link, useParams} from 'react-router-dom'
 
 export default function Bookcard(props) {
+
+
   return (
     <>
     <div className="min-w-sm max-w-lg w-[350px] my-2 bg-white border mx-5 try border-gray-200 rounded-lg shadow dark:bg-amber-800 dark:border-amber-700">
