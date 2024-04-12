@@ -47,7 +47,7 @@ export default function Hero() {
           return (
         <div className="lg:max-w-lg lg:w-full  md:w-1/2 w-5/6" key={books.cover_id}>
           <img className="object-cover rounded-lg object-center lg:ml-32" alt="hero" src={`https://covers.openlibrary.org/b/id/${books.cover_id}-L.jpg`}/>
-          <h3 className='text-lg text-black ml-5 my-2 font-semibold text-center'>{books.title}</h3>
+          <h3 className='kk p-2 text-lg text-black m-auto my-2 font-semibold text-center'>{books.title}</h3>
         </div>
         )})}
       </div>

@@ -7,6 +7,7 @@ import About from './About'
 import Features from './Features'
 import Categoryout from './Categoryout'
 import Result from './Result'
+import Searchres from './Searchres'
 
 export default function Page() {
   return (
@@ -18,6 +19,7 @@ export default function Page() {
       <Route path='/features' element={<Features/>}/>
       <Route path='/category/:id' element={<Categoryout/>}/>
       <Route path='/result/:name' element={<Result/>}/>
+      <Route path='/searchres/:res' element={<Searchres/>}/>
     </Routes>
     <Footer/>
     </>
