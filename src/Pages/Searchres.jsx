@@ -22,6 +22,7 @@ export default function Searchres() {
     const getsearchedbooks = async () => {
         const data = await fetch(`https://openlibrary.org/search.json?q=${params.res}&limit=21`)
         const res = await data.json()
+        console.log(res)
         setobj(res.docs)
     }
   
@@ -45,8 +46,8 @@ export default function Searchres() {
     <div className="grid lg:grid-cols-3 lg:mx-auto sm:ml-3 md:grid-cols-2 sm:grid-cols-1">
         {obj.map(books => {
             return(
-            <div key={books.cover_i} className='m-auto'> 
-                <Bookcard title={books.title} coverb={books.cover_i} author={books.author_name[0]} publish={books.first_publish_year} sub={'topic'} res={books.cover_edition_key} />
+            <div key={books.cover_edition_key} className='m-auto'> 
+                <Bookcard title={books.title} coverb={books.cover_i} author={books.author_name[0]} publish={books.first_publish_year} sub={(books.subject)?books.subject[0]:"N/A"} res={books.cover_edition_key} />
             </div>
         )})}
     </div>
