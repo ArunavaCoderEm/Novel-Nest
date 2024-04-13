@@ -42,7 +42,7 @@ export default function Belowhome() {
           className='text-center items-center justify-center m-auto'
         /> : 
         <>
-      <div className="grid lg:grid-cols-3 bg-slate-300 lg:mx-auto sm:ml-3 md:grid-cols-2 sm:grid-cols-1">
+      <div className="grid lg:grid-cols-3 rounded-lg bg-slate-300 lg:mx-auto sm:ml-3 md:grid-cols-2 sm:grid-cols-1">
         {obj.map(books => {
           return(
             <div key={books.cover_id} className='m-auto p-3'> 
