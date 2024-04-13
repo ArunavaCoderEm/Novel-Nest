@@ -20,7 +20,6 @@ export default function Result() {
     const getdetails = async () => {
         const data = await fetch(`https://openlibrary.org/search.json?q=${params.name}&limit=1`)
         const res = await data.json()
-        console.log(res);
         setobj(res.docs)
     }
 
@@ -44,58 +43,50 @@ export default function Result() {
             <>
         {obj.map((book) => {
             return(
-        <div key={book.cover_i}>
-            <section className="text-gray-600 body-font overflow-hidden">
-                <div className="container px-5 py-24 mx-auto">
-                    <div className="lg:w-full mx-auto flex flex-wrap">
-                    <div className="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
-                        <h2 className="text-sm title-font text-amber-500 tracking-widest">BOOK NAME</h2>
-                        <h1 className="text-amber-900 text-3xl title-font font-medium mb-4">{book.title}</h1>
-                        <div className="flex mb-4">
-                        <p className="flex-grow text-amber-700 border-b-2 border-amber-700 py-2 text-lg px-1">Description</p>
-        
+                <section className="text-gray-700 body-font overflow-hidden bg-white" key={book.cover_i}>
+                  <div className="container px-5 py-24 mx-auto">
+                    <div className="lg:w-4/5 mx-auto flex flex-wrap">
+                      <img alt="ecommerce" className="lg:w-1/2 w-full tryt lg:h-[80%] object-cover object-center rounded border border-gray-200" src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}/>
+                      <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                        <h2 className="text-sm title-font text-gray-500 tracking-widest">BOOK NAME</h2>
+                        <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{book.title}</h1>
+                        <div className="flex flex-col my-auto mb-4">
+                            <li className="list-disc text-gray-600 ml-3 my-auto">{book.ratings_count} Reviews</li>
+                            <li className="list-disc text-gray-600 ml-3 my-auto">{book.ratings_sortable} / 5  Rating</li>
                         </div>
-                        <p className="leading-relaxed mb-4"><span className='text-lg font-semibold text-amber-600 mr-2'>First Sentence :</span> {(book.first_sentence)?book.first_sentence[0]:"Not Available" }</p>
-                        <div className="flex border-t border-gray-200 py-2">
-                        <span className="text-gray-500">People online read count</span>
-                        <span className="ml-auto text-gray-900">{(book.already_read_count)?book.already_read_count:"Not Available"}</span>
-                        </div>
-                        <div className="flex border-t border-gray-200 py-2">
-                        <span className="text-gray-500">Author</span>
-                        <span className="ml-auto text-gray-900">{book.author_name[0]}</span>
-                        </div>
-                        <div className="flex border-t border-b mb-6 border-gray-200 py-2">
-                        <span className="text-gray-500">Contributor</span>
-                        <div className="flex flex-col ml-auto">
-                        <span className="ml-auto text-gray-900">{(book.contributor)?book.contributor[0]:"Not Available"}</span>
-                        <span className="ml-auto text-gray-900">{(book.contributor)?book.contributor[1]:"Not Available"}</span>
-                        <span className="ml-auto text-gray-900">{(book.contributor)?book.contributor[2]:"Not Available"}</span>
-                        </div>
-                        </div>
-                        <div className="flex border-t border-b mb-6 border-gray-200 py-2">
-                        <span className="text-gray-500">Ebook access and count</span>
-                        <div className="flex flex-col ml-auto">
-                        <span className="ml-auto text-gray-900">{book.ebook_access}</span>
-                        <span className="ml-auto text-gray-900">{book.ebook_count_i}</span>
-                        </div>
-                        </div>
-                        <div className="flex border-t border-b mb-6 border-gray-200 py-2">
-                        <span className="text-gray-500">Avl in {(book.language)?book.language.length:"N/A"}  Languages</span>
-                        <div className="grid grid-cols-4  ml-auto">
-                        <span className="ml-auto  text-gray-900">{(book.language)?book.language[0]:"N/A"}</span>
-                        <span className="ml-auto  text-gray-900">{(book.language)?book.language[1]:"N/A"}</span>
-                        <span className="ml-auto mx-auto  text-gray-900">{(book.language)?book.language[2]:"N/A"}</span>
-                        <span className="ml-auto mx-auto text-gray-900">{(book.language)?book.language[3]:"N/A"} ....</span>
-                        </div>
-                        </div>
-                        </div>
-                    <img alt="bookpic" className="tryt lg:w-1/2 w-full lg:h-auto h-72 lg:mt-20 md:mt-10 sm:,t-2 object-cover object-center rounded" src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}/>
+                        <p className="leading-relaxed text-left"><span className='mx-2 text-amber-500'>First Sentence :</span>{book.first_sentence}</p>       
+                        <div className="my-3 m-auto flex flex-col">
+                            <div className="flex gap-4">
+                                <h1 className='text-font-semibold text-amber-600'>Author :</h1>
+                                <p className=''>{book.author_name[0]}</p>
+                            </div>
+                            <div className="flex">
+                                <h1 className='text-font-semibold text-amber-600'>Contributor :</h1>
+                                <div className="flex flex-col ml-auto">
+                                    <p className="ml-auto text-gray-900">{(book.contributor)?book.contributor[0]:"Not Available"}</p>
+                                    <p className="ml-auto text-gray-900">{(book.contributor)?book.contributor[1]:"Not Available"}</p>
+                                </div>
+                            </div>
+                            <div className="flex">
+                                <h1 className='text-font-semibold text-amber-600'>Ebook & Count :</h1>
+                                <div className="flex flex-col ml-auto">
+                                    <span className="ml-auto text-gray-900">{book.ebook_access}</span>
+                                    <span className="ml-auto text-gray-900">{book.ebook_count_i}</span>
+                                </div>
+                            </div>
+                            <div className="flex">
+                                <h1 className='text-font-semibold text-amber-600'>Available in {(book.language)?book.language.length:"N/A"} Languages :</h1>
+                                <span className="ml-auto  text-gray-900">" {(book.language)?book.language[0]:"N/A"} ",</span>
+                                <span className="ml-auto  text-gray-900">" {(book.language)?book.language[1]:"N/A"} ",</span>
+                                <span className="ml-auto mx-auto  text-gray-900">" {(book.language)?book.language[2]:"N/A"} " ...</span>
+                            </div>
+                        </div>     
+                      </div>
                     </div>
-                </div>
+                  </div>
                 </section>
-                </div>
-            )
-        })}
+            
+        )})}
         </>
     }
     </>
