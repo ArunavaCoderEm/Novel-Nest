@@ -42,10 +42,10 @@ export default function Belowhome() {
           className='text-center items-center justify-center m-auto'
         /> : 
         <>
-      <div className="grid lg:grid-cols-3 lg:mx-auto sm:ml-3 md:grid-cols-2 sm:grid-cols-1">
+      <div className="grid lg:grid-cols-3 bg-slate-300 lg:mx-auto sm:ml-3 md:grid-cols-2 sm:grid-cols-1">
         {obj.map(books => {
           return(
-            <div key={books.cover_id}> 
+            <div key={books.cover_id} className='m-auto p-3'> 
               <Bookcard title={books.title} coverb={books.cover_id} author={books.authors[0].name} publish={books.first_publish_year} sub={books.subject[3]} res={books.cover_edition_key} />
             </div>
             )})}
