@@ -22,7 +22,6 @@ export default function Searchres() {
     const getsearchedbooks = async () => {
         const data = await fetch(`https://openlibrary.org/search.json?q=${params.res}&limit=21`)
         const res = await data.json()
-        console.log(res);
         setobj(res.docs)
     }
   

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, CSSProperties  } from 'react'
+import React, { useEffect, useState  } from 'react'
 import { useParams } from 'react-router-dom'
 import Bookcard from '../Components/Bookcard'
 import BounceLoader from "react-spinners/BounceLoader";
@@ -21,7 +21,6 @@ export default function Categoryout() {
     const getidbooks = async (id) => {
         const data = await fetch(`https://openlibrary.org/subjects/${params.id}.json?limit=30`)
         const res = await data.json()
-        console.log(res);
         setobj(res.works)
     }
   

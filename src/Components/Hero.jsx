@@ -1,8 +1,21 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
+import BounceLoader from "react-spinners/BounceLoader";
+
 
 export default function Hero() {
   const [obj,setobj] = useState([])
+
+  let [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+      setLoading(true);
+      setTimeout(() => {
+          setLoading(false);
+      }, 2000);
+  },[])
+
+
 
   const choose = ['comedy','love','action','adventure','romance','detective'] 
   let random = Math.floor(Math.random() * choose.length);
@@ -11,7 +24,6 @@ export default function Hero() {
   const getlikebooks = async () => {
       const data = await fetch(`https://openlibrary.org/subjects/${today}.json?limit=1`)
       const res = await data.json()
-      console.log(res);
       setobj(res.works)
   }
 
@@ -43,6 +55,15 @@ export default function Hero() {
           )})}
           </div>
         </div>
+        {
+        loading ? 
+         <BounceLoader 
+          color={'#ffbf00'}
+          loading={loading}
+          size={50}
+          className='text-center items-center justify-center m-auto'
+        /> : 
+        <>
         {obj.map(books => {
           return (
         <div className="lg:max-w-lg lg:w-full  md:w-1/2 w-5/6" key={books.cover_id}>
@@ -50,6 +71,8 @@ export default function Hero() {
           <h3 className='kk p-2 text-lg text-black m-auto my-2 font-semibold text-center'>{books.title}</h3>
         </div>
         )})}
+        </>
+      }
       </div>
     </section>
   )

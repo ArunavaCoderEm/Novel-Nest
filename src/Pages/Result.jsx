@@ -58,7 +58,7 @@ export default function Result() {
                         <p className="leading-relaxed mb-4"><span className='text-lg font-semibold text-amber-600 mr-2'>First Sentence :</span> {(book.first_sentence)?book.first_sentence[0]:"Not Available" }</p>
                         <div className="flex border-t border-gray-200 py-2">
                         <span className="text-gray-500">People online read count</span>
-                        <span className="ml-auto text-gray-900">{book.already_read_count}</span>
+                        <span className="ml-auto text-gray-900">{(book.already_read_count)?book.already_read_count:"Not Available"}</span>
                         </div>
                         <div className="flex border-t border-gray-200 py-2">
                         <span className="text-gray-500">Author</span>
@@ -67,9 +67,9 @@ export default function Result() {
                         <div className="flex border-t border-b mb-6 border-gray-200 py-2">
                         <span className="text-gray-500">Contributor</span>
                         <div className="flex flex-col ml-auto">
-                        <span className="ml-auto text-gray-900">{book.contributor[0]}</span>
-                        <span className="ml-auto text-gray-900">{book.contributor[1]}</span>
-                        <span className="ml-auto text-gray-900">{book.contributor[2]}</span>
+                        <span className="ml-auto text-gray-900">{(book.contributor)?book.contributor[0]:"Not Available"}</span>
+                        <span className="ml-auto text-gray-900">{(book.contributor)?book.contributor[1]:"Not Available"}</span>
+                        <span className="ml-auto text-gray-900">{(book.contributor)?book.contributor[2]:"Not Available"}</span>
                         </div>
                         </div>
                         <div className="flex border-t border-b mb-6 border-gray-200 py-2">
@@ -80,12 +80,12 @@ export default function Result() {
                         </div>
                         </div>
                         <div className="flex border-t border-b mb-6 border-gray-200 py-2">
-                        <span className="text-gray-500">Avl in {book.language.length}  Languages</span>
+                        <span className="text-gray-500">Avl in {(book.language)?book.language.length:"N/A"}  Languages</span>
                         <div className="grid grid-cols-4  ml-auto">
-                        <span className="ml-auto  text-gray-900">{book.language[0]}</span>
-                        <span className="ml-auto  text-gray-900">{book.language[1]}</span>
-                        <span className="ml-auto mx-auto  text-gray-900">{book.language[2]}</span>
-                        <span className="ml-auto mx-auto text-gray-900">{book.language[3]} ....</span>
+                        <span className="ml-auto  text-gray-900">{(book.language)?book.language[0]:"N/A"}</span>
+                        <span className="ml-auto  text-gray-900">{(book.language)?book.language[1]:"N/A"}</span>
+                        <span className="ml-auto mx-auto  text-gray-900">{(book.language)?book.language[2]:"N/A"}</span>
+                        <span className="ml-auto mx-auto text-gray-900">{(book.language)?book.language[3]:"N/A"} ....</span>
                         </div>
                         </div>
                         </div>
