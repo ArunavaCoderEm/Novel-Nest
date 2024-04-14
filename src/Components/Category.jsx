@@ -31,12 +31,12 @@ export default function Category() {
                     Comedy
                 </div>
             </Link>
-            <Link to='/category/romance' className="sq m-auto tryy p-2 rounded-lg my-2">
+            <Link to='/category/horror' className="sq m-auto tryy p-2 rounded-lg my-2">
                 <div className="pics  w-[100px] h-[70px]">
-                    <img src="https://i.pinimg.com/originals/a5/8f/c6/a58fc6a3644ed93cf14d4ea07e75a2fe.jpg" className='rounded-lg h-[50px]' alt="" />
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJd4igk67lgLHfRkNqPm7ZHXzyC2XiODzB3qR6oKjTEw&s" className='rounded-lg h-[50px]' alt="" />
                 </div>
                 <div className="sqt text-center mb-3 text-semibold font-mono tracking-wider">
-                    Romance
+                    Horror
                 </div>
             </Link>
             <Link to='/category/detective' className="sq m-auto tryy p-2 rounded-lg my-2">
