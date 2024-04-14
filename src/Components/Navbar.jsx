@@ -5,6 +5,7 @@ import {useNavigate} from 'react-router-dom';
 export default function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menu,setMenu] = useState('home');
 
   const toggleSearch = () => {
     setIsSearchOpen(!isSearchOpen);
@@ -28,7 +29,7 @@ export default function Navbar() {
     <>
       <nav className="bg-white border-gray-200 dark:bg-gray-700">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse" onClick={() => {setMenu('home')}}>
             <img src="./blogobb.png" className="h-8"/>
             <span className="self-center text-xl font-mono font-semibold whitespace-nowrap hov dark:text-white"><span className='text-amber-400 font-serif font-bold'>N</span>ovel<span className='text-amber-400 font-serif font-bold'>N</span>est</span>
           </Link>
@@ -62,13 +63,13 @@ export default function Navbar() {
           <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? 'block' : 'hidden'}`}>
             <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-600 md:dark:bg-gray-700 dark:border-gray-700">
               <li>
-                <Link to="/" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Home</Link>
+                <Link to="/" className={`block p-2 font-sm rounded-md hover:text-amber-500 transition-all duration-300 ${(menu == 'home'? `bg-amber-500 text-black` : `text-white`)}`} onClick={() => {setMenu('home')}} aria-current="page">Home</Link>
               </li>
               <li>
-                <Link to="/about" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-amber-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Me</Link>
+                <Link to="/about"  className={`block p-2 font-sm rounded-md hover:text-amber-500 transition-all duration-300 ${(menu == 'about'? `bg-amber-500 text-black` : `text-white`)}`} onClick={() => {setMenu('about')}}>About Me</Link>
               </li>
               <li>
-                <Link to="/features" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-amber-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Features</Link>
+                <Link to="/features"  className={`block p-2 font-sm rounded-md hover:text-amber-500 transition-all duration-300 ${(menu == 'feature'? `bg-amber-500 text-black` : `text-white`)}`} onClick={() => {setMenu('feature')}}>Features</Link>
               </li>
               <li>
               </li>
